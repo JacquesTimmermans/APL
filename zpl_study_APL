@@ -1,0 +1,132 @@
+⍝ 
+⍝ Estudo APL
+⍝
+⍝ v 0.0
+⍝
+⍝ by
+⍝
+⍝ Jacques Timmermans
+⍝
+
+'Estudo APL'
+
+⍝
+⍝ Função Somatório de vetor 
+⍝
+⍝ Versão Longa
+⍝
+⍝ .........................
+⍝
+⍝ O signo ∇ (nabla) é usado
+⍝ para definir a função SOM
+⍝ cujo argumento é um vetor.
+⍝ 
+⍝ SOMA & I são duas variáveis
+⍝ internas.
+⍝ 
+⍝ ⍴ retorna o número de 
+⍝ elementos do vetor.
+⍝ 
+
+∇ SOMA ← SOM VETOR
+SOMA ← 0
+I ← 1
+VOLTA: → (I > ⍴VETOR) / SAI
+   SOMA ← SOMA + VETOR[I]
+   I ← I + 1
+   → VOLTA
+SAI:
+∇
+
+⍝
+⍝ Função somatório de vetor 
+⍝
+⍝ Versão Curta
+⍝
+⍝ .........................
+⍝
+⍝ O operador +/ calcula o 
+⍝ somatório do vetor V.
+⍝
+
+∇ V ← SUM VETOR
+  V ← +/ VETOR
+∇
+
+⍝
+⍝ Função Fatorial
+⍝
+⍝ Versão Curta
+⍝
+⍝ .........................
+⍝
+⍝ ⍳N gera todos os números
+⍝ de 1 até N & o operador ×/
+⍝ multiplica todos eles.
+⍝ 
+
+∇ Y ← FATORIAL N
+  Y ← ×/ ⍳N
+∇
+
+⍝
+⍝ Função Fatorial
+⍝
+⍝ Versão Direta
+⍝
+⍝ .........................
+⍝
+⍝ ⍳⍵ gera todos os números
+⍝ de 1 até ⍵ & o operador ×/
+⍝ multiplica todos eles.
+⍝ 
+⍝ Importante notar que ⍵
+⍝ é o argumento direto
+
+⍝ FAT ← { ×/⍳⍵ }
+
+⍝
+⍝ Principal
+⍝
+
+' '
+'... Soma 1 2 3 ...'
+SOM 1 2 3
+' '
+'... Soma 1 2 3 ...'
+SUM 1 2 3
+' '
+'... 5! ...'
+FATORIAL 5
+' '
+'... n? ...'
+FAX ← { ×/⍳n←⎕ }
+
+⍝ 
+⍝ PODER EXTREMO DO APL
+⍝
+⍝ ............................
+⍝ 
+⍝ O código a seguir computa a  
+⍝ média aritmética dos elementos 
+⍝ de um vetor, inseridos via 
+⍝ teclado em tempo de execução. 
+⍝
+⍝ O vetor é armazenado na 
+⍝ variável x. 
+⍝
+⍝ A função unária ⍴x retorna o 
+⍝ número de elementos de x, 
+⍝ pelo qual é dividida a soma
+⍝ dos elementos (+/x). 
+⍝
+⍝ Os parênteses são necessários
+⍝ porque APL é interpretada da
+⍝ direita para a esquerda.
+
+'... Digite um vetor....'
+(+/x)÷⍴x←⎕
+
+⍝                    
+⍝ Finis Coronat Opus
+⍝                    
